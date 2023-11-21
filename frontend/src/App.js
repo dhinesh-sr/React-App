@@ -7,8 +7,10 @@ function App() {
   const [country, setCountry] = useState('');
   const [countryInfo, setCountryInfo] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchCountryInfo = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.get(`http://localhost:5000/country/${country}`);
       setCountryInfo(response.data);
@@ -21,7 +23,13 @@ function App() {
         console.error('Error fetching country info:', error);
         setErrorMessage('Error fetching country info');
       }
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const handleInputChange = (e) => {
+    setCountry(e.target.value.toLowerCase());
   };
 
   return (
@@ -34,17 +42,31 @@ function App() {
           type="text"
           placeholder="Enter a country name"
           value={country}
-          onChange={(e) => setCountry(e.target.value)}
+          onChange={handleInputChange}
         />
         <button onClick={fetchCountryInfo}>Get Country Info</button>
       </div>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      {countryInfo && (
+      {isLoading && <p className="loading-message">Loading...</p>}
+
+      {countryInfo && !isLoading && (
         <div className="country-info">
           <h2>{countryInfo.name.common}</h2>
+          <p>Capital: {countryInfo.capital}</p>
           <p>Population: {countryInfo.population}</p>
+          <p>Region: {countryInfo.region}</p>
+          {/* <p>Area: {countryInfo.area} km²</p> */}
+          <p>Languages: {Object.values(countryInfo.languages).join(', ')}</p>
+          <p>Timezones: {countryInfo.timezones.join(', ')}</p>
+          <p>
+            Flag:
+            <br /><br />
+            {countryInfo.flags && (
+              <img src={countryInfo.flags.svg} alt="Country Flag" width="150" />
+            )}
+          </p>
         </div>
       )}
     </div>
