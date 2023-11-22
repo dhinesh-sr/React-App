@@ -7,8 +7,8 @@ run npm install
 ## Start the backend server
 Run the following commands:
 
-cd backend
-node server.js
+$ cd backend
+$ node server.js
 
 
 ## Second Step:
