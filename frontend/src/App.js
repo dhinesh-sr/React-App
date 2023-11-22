@@ -12,7 +12,7 @@ function App() {
   const fetchCountryInfo = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/country/${country}`);
+      const response = await axios.get(`https://country-app-es6b.onrender.com/country/${country}`);
       setCountryInfo(response.data);
       setErrorMessage('');
     } catch (error) {
