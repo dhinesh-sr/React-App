@@ -10,7 +10,7 @@ This project comprises a React frontend and a Node.js backend server that fetche
 
 ### Starting the Backend Server
 1. Ensure Node.js and npm are installed:
-   ```bash
+
    $ node -v
    $ npm -v
 
@@ -37,28 +37,7 @@ $ npm start
 The front-end application will start in development mode. Access it in your browser at http://localhost:3000.
 
 
-
-
-
-
-
-
-
-
-
-
-
-run npm install
-
-## First Step:
-## Start the backend server
-Run the following commands:
-
-$ cd backend
-$ node server.js
-
-
-## Second Step:
-## Run the Frontend Application
-
-Run the following commands:
+Notes:
+Make sure the backend server is running before using the frontend application.
+Ensure proper connectivity between the front end and backend for data retrieval.
+Update the backend and frontend URLs if deploying to different environments.
