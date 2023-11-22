@@ -10,13 +10,14 @@ This project comprises a React frontend and a Node.js backend server that fetche
 
 ### Starting the Backend Server
 1. Ensure Node.js and npm are installed:
+   ```bash
    $ node -v
    $ npm -v
 
-2. Navigate to the backend directory:
+3. Navigate to the backend directory:
   $ cd backend
 
-3. Start the Node.js server:
+4. Start the Node.js server:
   $ node server.js
 
 The backend server will start running
