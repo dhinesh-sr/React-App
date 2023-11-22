@@ -34,10 +34,11 @@ $ npm install
 
 $ npm start
 
-The front-end application will start in development mode. Access it in your browser at http://localhost:3000.
+The front-end application will start in development mode. Access it in your browser at http://localhost:3000 (while running on the local server).
 
 
 Notes:
-Make sure the backend server is running before using the frontend application.
+
+Make sure the backend server is running before using the front-end application.
 Ensure proper connectivity between the front end and backend for data retrieval.
 Update the backend and frontend URLs if deploying to different environments.
